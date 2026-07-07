@@ -57,7 +57,7 @@ export const api = {
   delete: <T>(path: string) => request<T>(path, { method: "DELETE" }),
 };
 
-function buildQuery(params: PaginationParams & Record<string, unknown>) {
+export function buildQuery(params: PaginationParams & Record<string, unknown>) {
   const q = new URLSearchParams();
   Object.entries(params).forEach(([k, v]) => {
     if (v !== undefined && v !== null) q.set(k, String(v));
