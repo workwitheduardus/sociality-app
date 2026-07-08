@@ -2,6 +2,143 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@theme {
+  /* Typography */
+  --font-sans: "SF Pro", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "SF Pro", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 510;
+  --font-weight-semibold: 590;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 760;
+
+  /* Display 3xl - 56/68 */
+  --text-display-3xl: 3.5rem;
+  --text-display-3xl--line-height: 4.25rem;
+  --text-display-3xl--letter-spacing: -0.02em;
+
+  /* Display 2xl - 48/60 */
+  --text-display-2xl: 3rem;
+  --text-display-2xl--line-height: 3.75rem;
+  --text-display-2xl--letter-spacing: -0.02em;
+
+  /* Display xl - 40/56 */
+  --text-display-xl: 2.5rem;
+  --text-display-xl--line-height: 3.5rem;
+  --text-display-xl--letter-spacing: -0.02em;
+
+  /* Display lg - 36/44 */
+  --text-display-lg: 2.25rem;
+  --text-display-lg--line-height: 2.75rem;
+  --text-display-lg--letter-spacing: -0.02em;
+
+  /* Display md - 32/42 */
+  --text-display-md: 2rem;
+  --text-display-md--line-height: 2.625rem;
+  --text-display-md--letter-spacing: -0.02em;
+
+  /* Display sm - 28/38 */
+  --text-display-sm: 1.75rem;
+  --text-display-sm--line-height: 2.375rem;
+
+  /* Display xs - 24/36 */
+  --text-display-xs: 1.5rem;
+  --text-display-xs--line-height: 2.25rem;
+
+  /* Text xl - 20/34 */
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 2.125rem;
+
+  /* Text lg - 18/32 */
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 2rem;
+
+  /* Text md - 16/30 */
+  --text-md: 1rem;
+  --text-md--line-height: 1.875rem;
+  --text-md--letter-spacing: -0.02em;
+
+  /* Text sm - 14/28 */
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.75rem;
+  --text-sm--letter-spacing: -0.02em;
+
+  /* Text xs - 12/24 */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5rem;
+
+  /* Colors from the tokens */
+  --color-text-primary: #252b37;
+  --color-text-secondary: #0a0d12;
+  --color-border-subtle: #d5d7da;
+  --color-surface: #fdfdfd;
+
+  /* Colors Token */
+
+   /* Gray scale */
+  --color-gray-25: #fdfdfd;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e9eaeb;
+  --color-gray-300: #d5d7da;
+  --color-gray-400: #a4a7ae;
+  --color-gray-500: #717680;
+  --color-gray-600: #535862;
+  --color-gray-700: #414651;
+  --color-gray-800: #252b37;
+  --color-gray-900: #181d27;
+  --color-gray-950: #0a0d12;
+
+  /* Brand */
+  --color-brand-50: #f6f9fe;
+  --color-brand-500: #7f51f9;
+  --color-brand-600: #6936f2;
+
+  /* Semantic */
+  --color-error-700: #b41759;
+  --color-success-600: #079455;
+  --color-warning-400: #fdb022;
+
+  /* Base */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+   /* Radius */
+  --radius-none: 0px;
+  --radius-xxs: 2px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+  --radius-4xl: 24px;
+  --radius-full: 9999px;
+
+    /* Spacing */
+  --spacing-none: 0px;
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 6px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 16px;
+  --spacing-2xl: 20px;
+  --spacing-3xl: 24px;
+  --spacing-4xl: 32px;
+  --spacing-5xl: 40px;
+  --spacing-6xl: 48px;
+  --spacing-7xl: 64px;
+  --spacing-8xl: 80px;
+  --spacing-9xl: 96px;
+  --spacing-10xl: 128px;
+  --spacing-11xl: 160px;
+
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
