@@ -1,9 +1,9 @@
-import { getToken, setToken, clearToken} from "./auth-storage";
+import { getToken, setToken, clearToken } from "./auth-storage";
 import { ApiError, PaginationParams } from "@/app/types/api";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
-class ApiClientError extends Error {
+export class ApiClientError extends Error {
   constructor(
     public status: number,
     public body: ApiError,
@@ -65,3 +65,4 @@ export function buildQuery(params: PaginationParams & Record<string, unknown>) {
   const str = q.toString();
   return str ? `?${str}` : "";
 }
+
