@@ -3,6 +3,9 @@
 import { Heart, MessageCircle, Send, Bookmark } from "lucide-react";
 import { useLikeMutation } from "@/lib/hooks/mutations/use-like-mutation";
 import { useSaveMutation } from "@/lib/hooks/mutations/use-save-mutations";
+import { CommentsModal } from "./comments-modal";
+import { useState } from "react";
+
 
 interface PostActionsProps {
   postId: number;
@@ -23,8 +26,11 @@ export function PostActions({
 }: PostActionsProps) {
   const like = useLikeMutation(postId);
   const save = useSaveMutation(postId);
+  const [commentsOpen, setCommentsOpen] = useState(false);
+
 
   return (
+    <>
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-3">
         <button
@@ -61,5 +67,12 @@ export function PostActions({
         />
       </button>
     </div>
+
+    <CommentsModal
+        postId={postId}
+        open={commentsOpen}
+        onClose={() => setCommentsOpen(false)}
+      />
+    </>
   );
 }
