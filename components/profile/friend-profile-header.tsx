@@ -1,16 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { Send } from "lucide-react";
+import { Send, Check } from "lucide-react";
 import { ProfileStat } from "./profile-stat";
 import { User } from "@/app/types/api";
 
-interface ProfileHeaderProps {
+interface FriendProfileHeaderProps {
   user: User;
-  onEditProfile: () => void;
+  isFollowing: boolean;
+  onToggleFollow: () => void;
+  isPending: boolean;
 }
 
-export function ProfileHeader({ user, onEditProfile }: ProfileHeaderProps) {
+export function FriendProfileHeader({
+  user,
+  isFollowing,
+  onToggleFollow,
+  isPending,
+}: FriendProfileHeaderProps) {
   const stats = [
     { value: user.postsCount, label: "Post" },
     { value: user.followersCount, label: "Followers" },
@@ -44,10 +51,16 @@ export function ProfileHeader({ user, onEditProfile }: ProfileHeaderProps) {
 
         <div className="flex items-center gap-3">
           <button
-            onClick={onEditProfile}
-            className="flex-1 rounded-full border border-gray-900 px-4 py-2 text-sm font-bold text-white md:px-4 md:py-3 md:text-md"
+            onClick={onToggleFollow}
+            disabled={isPending}
+            className={`flex flex-1 items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-bold disabled:opacity-60 md:px-6 md:py-3 md:text-md ${
+              isFollowing
+                ? "border border-gray-900 text-white"
+                : "bg-brand-600 text-white"
+            }`}
           >
-            Edit Profile
+            {isFollowing && <Check className="h-4 w-4 md:h-5 md:w-5" />}
+            {isFollowing ? "Following" : "Follow"}
           </button>
           <button
             aria-label="Share profile"
